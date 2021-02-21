@@ -1,0 +1,140 @@
+Licence Plate: CJ34FAR
+Brand: Toyota
+Colour: white
+Type: gasoline
+Price for a day: 30
+Free: Yes
+
+Licence Plate: CJ23SAV
+Brand: Mercedes
+Colour: red
+Type: diesel
+Price for a day: 30
+Free: No
+
+Licence Plate: CJ73MIE
+Brand: BMW
+Colour: black
+Type: diesel
+Price for a day: 28
+Free: No
+
+Licence Plate: SV32MOR
+Brand: Skoda
+Colour: green
+Type: gasoline
+Price for a day: 23
+Free: Yes
+
+Licence Plate: CJ40SER
+Brand: Audi
+Colour: grey
+Type: gasoline
+Price for a day: 21
+Free: No
+
+Licence Plate: SV25YEY
+Brand: Audi
+Colour: white
+Type: gasoline
+Price for a day: 20
+Free: No
+
+Licence Plate: B14RED
+Brand: Toyota
+Colour: grey
+Type: gasoline
+Price for a day: 27
+Free: No
+
+Licence Plate: CJ15ROC
+Brand: Toyota
+Colour: black
+Type: diesel
+Price for a day: 33
+Free: No
+
+Licence Plate: SV20RUX
+Brand: Mercedes
+Colour: blue
+Type: diesel
+Price for a day: 28
+Free: Yes
+
+Licence Plate: B54MEC
+Brand: Skoda
+Colour: red
+Type: diesel
+Price for a day: 23
+Free: Yes
+
+Licence Plate: CJ23MAG
+Brand: Audi
+Colour: red
+Type: gasoline
+Price for a day: 25
+Free: No
+
+Licence Plate: SV30ADD
+Brand: Audi
+Colour: green
+Type: gasoline
+Price for a day: 21
+Free: Yes
+
+Licence Plate: CJ33GLN
+Brand: Dacia
+Colour: grey
+Type: gasoline
+Price for a day: 17
+Free: No
+
+Licence Plate: B25YAC
+Brand: Dacia
+Colour: blue
+Type: gasoline
+Price for a day: 17
+Free: No
+
+Licence Plate: B20CSS
+Brand: Dacia
+Colour: white
+Type: diesel
+Price for a day: 18
+Free: Yes
+
+Licence Plate: SV08MAP
+Brand: Skoda
+Colour: grey
+Type: diesel
+Price for a day: 26
+Free: No
+
+Licence Plate: CJ30HEY
+Brand: Skoda
+Colour: grey
+Type: diesel
+Price for a day: 23
+Free: Yes
+
+Licence Plate: B08LOV
+Brand: BMW
+Colour: green
+Type: gasoline
+Price for a day: 25
+Free: No
+
+Licence Plate: CJ23MAT
+Brand: Skoda
+Colour: grey
+Type: gasoline
+Price for a day: 21
+Free: Yes
+
+Licence Plate: CJ08HOO
+Brand: Skoda
+Colour: red
+Type: diesel
+Price for a day: 23
+Free: Yes
+

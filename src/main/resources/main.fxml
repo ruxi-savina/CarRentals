@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="1.0" tabMinWidth="1.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerFX.ControllerMainFX">
+  <tabs>
+    <Tab text="Car">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <SplitPane dividerPositions="0.6" layoutX="194.0" layoutY="84.0" prefHeight="370.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <items>
+                        <HBox alignment="TOP_CENTER" prefHeight="568.0" prefWidth="426.0">
+                           <children>
+                              <TableView fx:id="carTableView" editable="true" minHeight="300.0" minWidth="200.0" prefHeight="568.0" prefWidth="449.0" style="-fx-background-image: url(&quot;sadFace.jpg&quot;);" HBox.hgrow="SOMETIMES">
+                                <columns>
+                                  <TableColumn prefWidth="82.99999314546585" text="LicencePlate">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="id" />
+                                    </cellValueFactory>
+                                    </TableColumn>
+                                  <TableColumn prefWidth="53.000003814697266" text="Brand">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="brand" />
+                                        </cellValueFactory>
+                                      </TableColumn>
+                                    <TableColumn prefWidth="64.0" text="Colour">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="colour" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="60.79998779296875" text="Type">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="type" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="65.59999084472656" text="Price">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="price" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn text="Free">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="free" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                                 <HBox.margin>
+                                    <Insets right="-4.0" />
+                                 </HBox.margin>
+                              </TableView>
+                              <TableView fx:id="recycleBinTableView" minWidth="-Infinity" onMouseClicked="#deleteCarRecycleBin" prefHeight="568.0" prefWidth="37.0" style="-fx-background-image: url(&quot;sadFace.jpg&quot;);">
+                                  <placeholder>
+                                      <Label text="" />
+                                  </placeholder>
+                                <columns>
+                                  <TableColumn prefWidth="75.0">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="imageView" />
+                                    </cellValueFactory>
+                                  </TableColumn>
+                                </columns>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <HBox.margin>
+                                    <Insets right="-3.0" />
+                                 </HBox.margin>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox alignment="BOTTOM_RIGHT" maxHeight="600.0" maxWidth="690.0" minHeight="300.0" minWidth="200.0" prefHeight="568.0" prefWidth="368.0" spacing="10.0">
+                           <children>
+                              <GridPane alignment="TOP_CENTER" hgap="10.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="193.0" prefWidth="333.0" vgap="5.0" VBox.vgrow="SOMETIMES">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.2" minWidth="10.0" prefWidth="112.4" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.2" minWidth="10.0" prefWidth="86.80000000000001" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="204.00000762939453" minWidth="24.799999999999997" prefWidth="114.4" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" />
+                                    <RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                                    <RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                                    <RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                                    <RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                                    <RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="0.0" prefWidth="299.0" text="Filter By:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <CheckBox fx:id="allCheckBox" mnemonicParsing="false" onAction="#filterAllCars" prefHeight="30.0" prefWidth="100.0" scaleX="1.1" scaleY="1.1" text="All" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                    <CheckBox fx:id="freeCheckBox" mnemonicParsing="false" onAction="#filterFreeCars" prefHeight="30.0" prefWidth="100.0" scaleX="1.1" scaleY="1.1" text="Free" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                    <CheckBox fx:id="occupiedCheckBox" mnemonicParsing="false" onAction="#filterOccupiedCars" prefHeight="30.0" prefWidth="100.0" scaleX="1.1" scaleY="1.1" text="Occupied" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                                    <CheckBox fx:id="priceCheckBox" alignment="TOP_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#filterPriceCars" prefHeight="30.0" prefWidth="100.0" scaleX="1.1" scaleY="1.1" text="Price" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets top="5.0" />
+                                       </GridPane.margin></CheckBox>
+                                    <Spinner fx:id="priceMinSpinner" onMouseClicked="#backToFilterAll" prefHeight="0.0" prefWidth="71.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                     <valueFactory>
+                                         <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="0" max="50" min="0" />
+                                     </valueFactory>
+                                    </Spinner>
+                                    <Label prefWidth="26.0" text="MIN" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="MAX" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                     <Spinner fx:id="priceMaxSpinner" onMouseClicked="#backToFilterAll" prefHeight="8.0" prefWidth="65.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                         <valueFactory>
+                                             <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="50" max="50" min="0" />
+                                         </valueFactory>
+                                     </Spinner>
+                                    <CheckBox fx:id="brandCheckBox" mnemonicParsing="false" onAction="#filterBrandCars" prefHeight="30.0" prefWidth="100.0" scaleX="1.1" scaleY="1.1" text="Brand" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </CheckBox>
+                                     <ChoiceBox fx:id="brandChoiceBox" prefHeight="26.0" prefWidth="138.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin></ChoiceBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="3.0" />
+                                 </VBox.margin>
+                              </GridPane>
+                              <Separator prefHeight="68.0" prefWidth="296.0" VBox.vgrow="SOMETIMES">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin></Separator>
+                              <GridPane alignment="TOP_CENTER" blendMode="SRC_ATOP" hgap="2.0">
+                                  <columnConstraints>
+                                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="104.8" />
+                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="274.39999237060545" minWidth="10.0" prefWidth="226.39999999999998" />
+                                  </columnConstraints>
+                                  <rowConstraints>
+                                      <RowConstraints />
+                                      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      <RowConstraints />
+                                  </rowConstraints>
+                                  <children>
+                                      <TextField fx:id="idCField" promptText="B30AAA" scaleX="0.8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                      <TextField fx:id="brandField" promptText="Mercedes" scaleX="0.8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                      <TextField fx:id="colourField" promptText="red" scaleX="0.8" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                      <TextField fx:id="priceField" promptText="27" scaleX="0.8" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                      <TextField fx:id="typeField" promptText="gasoline/diesel" scaleX="0.8" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                      <Label text="Licence Plate" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </Label>
+                                      <Label text="Brand" GridPane.rowIndex="2" />
+                                      <Label text="Colour" GridPane.rowIndex="3" />
+                                      <Label text="Price" GridPane.rowIndex="4" />
+                                      <Label text="Type" GridPane.rowIndex="5" />
+                                  </children>
+                                 <opaqueInsets>
+                                    <Insets bottom="100.0" />
+                                 </opaqueInsets>
+                              </GridPane>
+                              <GridPane alignment="TOP_CENTER" VBox.vgrow="SOMETIMES">
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clearFieldsCar" prefHeight="25.0" prefWidth="55.0" text="Clear" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin></Button>
+                                    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addCar" prefHeight="25.0" prefWidth="55.0" text="Add" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deleteCar" prefHeight="25.0" prefWidth="55.0" text="Delete" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#updateCar" prefHeight="25.0" prefWidth="55.0" text="Update" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <Separator prefHeight="34.0" prefWidth="296.0" VBox.vgrow="SOMETIMES" />
+                              <Button fx:id="reportsCarButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#openCarReports" prefHeight="26.0" prefWidth="84.0" text="Reports &gt;&gt;" />
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </items>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </SplitPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Reservation">
+        <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <children>
+                    <SplitPane dividerPositions="0.6" layoutX="194.0" layoutY="84.0" prefHeight="370.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <items>
+                            <HBox alignment="TOP_CENTER" prefHeight="568.0" prefWidth="426.0">
+                                <children>
+                                    <TableView fx:id="reservationTableView" editable="true" minHeight="300.0" minWidth="200.0" prefHeight="568.0" prefWidth="449.0" style="-fx-background-image: url(&quot;sadFace.jpg&quot;);" HBox.hgrow="SOMETIMES">
+                                        <columns>
+                                            <TableColumn prefWidth="82.99999314546585" text="ID">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="id" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="53.000003814697266" text="Name">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="name" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="64.0" text="Car">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="carId" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="60.79998779296875" text="Date">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="startDate" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="65.59999084472656" text="Hour">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="startHour" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn text="No_Days">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="numberOfDays" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn text="Price">
+                                               <cellValueFactory>
+                                                  <PropertyValueFactory property="price" />
+                                               </cellValueFactory>
+                                            </TableColumn>
+                                        </columns>
+                                        <columnResizePolicy>
+                                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                        </columnResizePolicy>
+                                        <HBox.margin>
+                                            <Insets right="-4.0" />
+                                        </HBox.margin>
+                                    </TableView>
+                                    <TableView fx:id="recycleBinTableView2" maxWidth="-Infinity" minWidth="-Infinity" onMouseClicked="#deleteReservationRecycleBin" prefHeight="568.0" prefWidth="37.0" style="-fx-background-image: url(&quot;sadFace.jpg&quot;);">
+                                        <placeholder>
+                                            <Label text="" />
+                                        </placeholder>
+                                        <columns>
+                                            <TableColumn prefWidth="75.0">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="imageView" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                        </columns>
+                                        <opaqueInsets>
+                                            <Insets />
+                                        </opaqueInsets>
+                                        <HBox.margin>
+                                            <Insets right="-3.0" />
+                                        </HBox.margin>
+                                    </TableView>
+                                </children>
+                            </HBox>
+                            <VBox alignment="CENTER_RIGHT" maxHeight="600.0" maxWidth="690.0" minHeight="300.0" minWidth="200.0" prefHeight="568.0" prefWidth="368.0" spacing="10.0">
+                                <children>
+                                    <GridPane alignment="TOP_CENTER" hgap="10.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="137.0" prefWidth="335.0" vgap="2.0">
+                                        <columnConstraints>
+                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.2" minWidth="10.0" prefWidth="70.79999237060547" />
+                                            <ColumnConstraints maxWidth="253.60000762939453" minWidth="24.799999999999997" prefWidth="253.60000762939453" />
+                                        </columnConstraints>
+                                        <rowConstraints>
+                                            <RowConstraints maxHeight="51.59999809265137" minHeight="0.0" prefHeight="34.00000190734863" />
+                                    <RowConstraints maxHeight="56.79999999999998" minHeight="10.0" prefHeight="40.0" valignment="CENTER" vgrow="ALWAYS" />
+                                            <RowConstraints maxHeight="56.0" minHeight="0.0" prefHeight="40.0" valignment="CENTER" vgrow="ALWAYS" />
+                                            <RowConstraints maxHeight="56.0" minHeight="0.0" prefHeight="40.0" valignment="CENTER" vgrow="ALWAYS" />
+                                            <RowConstraints maxHeight="56.0" minHeight="0.0" prefHeight="40.0" valignment="CENTER" vgrow="ALWAYS" />
+                                        </rowConstraints>
+                                        <children>
+                                            <Label prefHeight="0.0" prefWidth="299.0" text="Search by:">
+                                                <font>
+                                                    <Font size="15.0" />
+                                                </font>
+                                                <GridPane.margin>
+                                                    <Insets />
+                                                </GridPane.margin>
+                                            </Label>
+                                            <CheckBox fx:id="nameCheckBox" mnemonicParsing="false" onAction="#filterNameReservations" prefHeight="18.0" prefWidth="100.0" scaleX="1.1" scaleY="1.1" text="Name" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                            <CheckBox fx:id="carCheckBox" mnemonicParsing="false" onAction="#filterCarReservations" prefHeight="18.0" prefWidth="100.0" scaleX="1.1" scaleY="1.1" text="Car" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                                            <CheckBox fx:id="dateCheckBox" mnemonicParsing="false" onAction="#filterDateReservations" prefHeight="18.0" prefWidth="100.0" scaleX="1.1" scaleY="1.1" text="Date" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                                    <DatePicker fx:id="datePickerSearch" maxWidth="150.0" onAction="#backToFilterAllReservations" onMouseClicked="#backToFilterAllReservations" prefHeight="26.0" prefWidth="166.0" scaleX="0.8" scaleY="0.9" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </DatePicker>
+                                    <CheckBox fx:id="allRCheckBox" mnemonicParsing="false" onAction="#filterAllReservations" prefHeight="18.0" prefWidth="100.0" scaleX="1.1" scaleY="1.1" text="All" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                    <TextField fx:id="carSearchField" maxWidth="150.0" onAction="#backToFilterAllReservations" onMouseClicked="#backToFilterAllReservations" promptText="SV23RUX" scaleX="0.8" scaleY="0.9" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="nameSearchField" maxWidth="150.0" minWidth="1.0" onAction="#backToFilterAllReservations" onMouseClicked="#backToFilterAllReservations" prefWidth="1.0" promptText="Eevee" scaleX="0.8" scaleY="0.9" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                        </children>
+                                        <VBox.margin>
+                                            <Insets left="1.0" />
+                                        </VBox.margin>
+                                    </GridPane>
+                                    <Separator prefHeight="62.0" prefWidth="336.0" VBox.vgrow="SOMETIMES">
+                                        <VBox.margin>
+                                            <Insets />
+                                        </VBox.margin></Separator>
+                                    <GridPane alignment="TOP_CENTER" blendMode="SRC_ATOP" hgap="2.0" prefWidth="334.0">
+                                        <columnConstraints>
+                                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="104.8" />
+                                            <ColumnConstraints halignment="CENTER" maxWidth="274.39999237060545" minWidth="10.0" prefWidth="226.39999999999998" />
+                                        </columnConstraints>
+                                        <rowConstraints>
+                                            <RowConstraints />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                        </rowConstraints>
+                                        <children>
+                                    <Label fx:id="idRLabel" alignment="CENTER" textFill="#cf1818" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin></Label>
+                                            <TextField fx:id="nameField" promptText="Eva" scaleX="0.8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <ComboBox fx:id="carComboBox" editable="true" prefWidth="180.0" promptText="SV30HEY" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <DatePicker fx:id="datePicker" editable="false" prefHeight="26.0" prefWidth="211.0" scaleX="0.85" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                            <TextField fx:id="hourField" promptText="15:30" scaleX="0.8" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                            <Label text="ID" GridPane.rowIndex="1">
+                                                <GridPane.margin>
+                                                    <Insets />
+                                                </GridPane.margin>
+                                            </Label>
+                                            <Label text="Name" GridPane.rowIndex="2" />
+                                            <Label text="Car" GridPane.rowIndex="3" />
+                                            <Label text="Date" GridPane.rowIndex="4" />
+                                            <Label text="Hour" GridPane.rowIndex="5" />
+                                    <Label layoutX="68.0" layoutY="138.0" text="No Days" GridPane.rowIndex="6" />
+                                    <TextField fx:id="noDaysField" layoutX="98.0" layoutY="43.0" promptText="5" scaleX="0.8" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                        </children>
+                                        <opaqueInsets>
+                                            <Insets bottom="100.0" />
+                                        </opaqueInsets>
+                                    </GridPane>
+                                    <GridPane alignment="TOP_CENTER" VBox.vgrow="SOMETIMES">
+                                        <columnConstraints>
+                                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        </columnConstraints>
+                                        <rowConstraints>
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        </rowConstraints>
+                                        <children>
+                                            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clearFieldsReservation" prefHeight="25.0" prefWidth="55.0" text="Clear" GridPane.columnIndex="1">
+                                                <GridPane.margin>
+                                                    <Insets />
+                                                </GridPane.margin></Button>
+                                            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addReservation" prefHeight="25.0" prefWidth="55.0" text="Add" GridPane.rowIndex="1" />
+                                            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deleteReservation" prefHeight="25.0" prefWidth="55.0" text="Delete" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#updateReservation" prefHeight="25.0" prefWidth="55.0" text="Update" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                        </children>
+                                    </GridPane>
+                                    <Separator prefHeight="34.0" prefWidth="296.0" VBox.vgrow="SOMETIMES" />
+                                    <Button fx:id="reportsReservationButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#openReservationReports" prefHeight="26.0" prefWidth="84.0" text="Reports &gt;&gt;" />
+                                </children>
+                                <padding>
+                                    <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+                                </padding>
+                            </VBox>
+                        </items>
+                        <opaqueInsets>
+                            <Insets />
+                        </opaqueInsets>
+                    </SplitPane>
+                </children></AnchorPane>
+        </content>
+    </Tab>
+  </tabs>
+</TabPane>

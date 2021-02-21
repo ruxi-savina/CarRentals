@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerFX.ControllerCarReportsFX">
+   <children>
+      <GridPane gridLinesVisible="true" layoutX="75.0" layoutY="75.0" maxWidth="350.0" minHeight="300.0" minWidth="500.0" prefHeight="250.0" prefWidth="450.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="75.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="299.00001525878906" minWidth="10.0" prefWidth="170.4" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="0.9999847412109375" prefWidth="44.20000000000002" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.0" minWidth="10.0" prefWidth="235.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="The most expensive car">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label text="The cheapest car" GridPane.rowIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label text="Number of free cars" GridPane.rowIndex="2" />
+            <Label text="Number of occupied cars" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#mostExpensiveCar" text="&gt;&gt;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Button mnemonicParsing="false" onAction="#cheapestCar" text="&gt;&gt;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button mnemonicParsing="false" onAction="#noFreeCars" text="&gt;&gt;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button mnemonicParsing="false" onAction="#noOccupiedCars" text="&gt;&gt;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <TextField fx:id="noFreeField" editable="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="30.0" right="30.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="noOccupiedField" editable="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="30.0" right="30.0" />
+               </GridPane.margin>
+            </TextField>
+            <GridPane GridPane.columnIndex="2">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="130.0" minWidth="100.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" maxWidth="130.0" minWidth="100.0" prefWidth="120.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="28.6" minHeight="10.0" prefHeight="19.6" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="46.8" minHeight="10.0" prefHeight="42.8" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="expensivePriceField" editable="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="expensiveCarField" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Car" GridPane.valignment="BOTTOM" />
+                  <Label text="Price" GridPane.columnIndex="1" GridPane.valignment="BOTTOM" />
+               </children>
+            </GridPane>
+            <GridPane layoutX="225.0" layoutY="10.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="130.0" minWidth="100.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" maxWidth="130.0" minWidth="100.0" prefWidth="120.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="28.6" minHeight="10.0" prefHeight="19.6" valignment="CENTER" vgrow="ALWAYS" />
+                  <RowConstraints maxHeight="46.8" minHeight="10.0" prefHeight="42.8" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="cheapPriceField" editable="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="cheapCarField" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Car" GridPane.valignment="BOTTOM" />
+                  <Label text="Price" GridPane.columnIndex="1" GridPane.valignment="BOTTOM" />
+               </children>
+            </GridPane>
+            <Label text="Number of brands" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#noBrands" text="&gt;&gt;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <TextField fx:id="noBrandsField" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="30.0" right="30.0" />
+               </GridPane.margin>
+            </TextField>
+         </children>
+      </GridPane>
+      <Button fx:id="backButton" layoutX="75.0" layoutY="396.0" mnemonicParsing="false" onAction="#closeCarReports" prefWidth="75.0" text="&lt;&lt; Back" />
+   </children>
+</AnchorPane>

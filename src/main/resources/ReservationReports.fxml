@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerFX.ControllerReservationReportsFX">
+    <children>
+        <GridPane gridLinesVisible="true" layoutX="75.0" layoutY="75.0" maxWidth="350.0" minHeight="300.0" minWidth="500.0" prefHeight="250.0" prefWidth="450.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="75.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="299.00001525878906" minWidth="10.0" prefWidth="217.4" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="0.9999847412109375" prefWidth="47.79999999999998" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.0" minWidth="10.0" prefWidth="235.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Biggest price payed on a reservation">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+                <Label text="The client with the most reservations" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+                <Label text="The longest reservation" GridPane.rowIndex="3" />
+                <Label text="The busiest day" GridPane.rowIndex="4" />
+                <Button mnemonicParsing="false" onAction="#biggestPriceRes" text="&gt;&gt;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                <Button mnemonicParsing="false" onAction="#mostReservations" text="&gt;&gt;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                <Button mnemonicParsing="false" onAction="#longestReservation" text="&gt;&gt;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                <Button mnemonicParsing="false" onAction="#busiestDay" text="&gt;&gt;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                <GridPane GridPane.columnIndex="2">
+                    <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="130.0" minWidth="32.0" prefWidth="38.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="168.00000190734863" minWidth="100.0" prefWidth="162.0" />
+                        <ColumnConstraints halignment="CENTER" maxWidth="130.0" minWidth="100.0" prefWidth="120.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="28.6" minHeight="10.0" prefHeight="19.6" valignment="CENTER" vgrow="ALWAYS" />
+                        <RowConstraints maxHeight="46.8" minHeight="10.0" prefHeight="42.8" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <TextField fx:id="biggestPricePriceField" editable="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                            <GridPane.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="biggestPriceNameField" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                            <GridPane.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </GridPane.margin>
+                        </TextField>
+                        <Label text="Name" GridPane.columnIndex="1" GridPane.valignment="BOTTOM" />
+                        <Label text="Price" GridPane.columnIndex="2" GridPane.valignment="BOTTOM" />
+                  <Label text="ID" />
+                  <TextField fx:id="biggestPriceIDField" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                    </children>
+                </GridPane>
+                <GridPane layoutX="225.0" layoutY="10.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="174.00000190734863" minWidth="100.0" prefWidth="113.60000762939453" />
+                        <ColumnConstraints halignment="CENTER" maxWidth="130.0" minWidth="100.0" prefWidth="121.99999237060547" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="28.6" minHeight="10.0" prefHeight="19.6" valignment="CENTER" vgrow="ALWAYS" />
+                        <RowConstraints maxHeight="46.8" minHeight="10.0" prefHeight="42.8" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <TextField fx:id="mostResNumberField" editable="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                            <GridPane.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="mostResNameField" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                            <GridPane.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </GridPane.margin>
+                        </TextField>
+                        <Label text="Name" GridPane.valignment="BOTTOM" />
+                        <Label text="Number" GridPane.columnIndex="1" GridPane.valignment="BOTTOM" />
+                    </children>
+                </GridPane>
+            <GridPane layoutX="276.0" layoutY="70.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="130.0" minWidth="32.0" prefWidth="38.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="168.00000190734863" minWidth="100.0" prefWidth="168.00000190734863" />
+                  <ColumnConstraints halignment="CENTER" maxWidth="130.0" minWidth="100.0" prefWidth="120.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="28.6" minHeight="10.0" prefHeight="19.6" valignment="CENTER" vgrow="ALWAYS" />
+                  <RowConstraints maxHeight="46.8" minHeight="10.0" prefHeight="42.8" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="longestResNoDaysField" editable="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="longestResNameField" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Name" GridPane.columnIndex="1" GridPane.valignment="BOTTOM" />
+                  <Label text="No Days" GridPane.columnIndex="2" GridPane.valignment="BOTTOM" />
+                  <Label text="ID" />
+                  <TextField fx:id="longestReservationIDField" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <Label text="Biggest price spent by a client" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#biggestPriceClient" text="&gt;&gt;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <GridPane layoutX="276.0" layoutY="70.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="178.00000190734863" minWidth="91.60000762939453" prefWidth="112.60000762939453" />
+                  <ColumnConstraints halignment="CENTER" maxWidth="143.99999237060547" minWidth="100.0" prefWidth="122.99999237060547" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="28.6" minHeight="10.0" prefHeight="19.6" valignment="CENTER" vgrow="ALWAYS" />
+                  <RowConstraints maxHeight="46.8" minHeight="10.0" prefHeight="42.8" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="biggestPriceCPriceField" editable="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="biggestPriceCNameField" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Name" GridPane.valignment="BOTTOM" />
+                  <Label text="Price" GridPane.columnIndex="1" GridPane.valignment="BOTTOM" />
+               </children>
+            </GridPane>
+            <GridPane prefHeight="60.0" prefWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" maxWidth="300.0" minWidth="10.0" prefWidth="300.0" />
+                  <ColumnConstraints halignment="CENTER" maxWidth="300.0" minWidth="10.0" prefWidth="300.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="30.4" minHeight="1.3999999999999986" prefHeight="27.4" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="59.4" minHeight="10.0" prefHeight="33.4" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Day" />
+                  <TextField fx:id="busiestDayField" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="No Reservations" GridPane.columnIndex="1" />
+                  <TextField fx:id="busiestNoResField" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            </children>
+        </GridPane>
+        <Button fx:id="backRButton" layoutX="75.0" layoutY="396.0" mnemonicParsing="false" onAction="#closeCarReports" prefWidth="75.0" text="&lt;&lt; Back" />
+    </children>
+</AnchorPane>
